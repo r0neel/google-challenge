@@ -15,14 +15,17 @@
         <img src="https://fontmeme.com/permalink/220126/c358a959a6c2951827a57d513fdeb3de.png" alt="google-font" border="0">
     </div>
     <section>
-        <form>
+        <form id="theform">
             <!-- <label for="site-search">Search the site:</label> -->
-            <input type="search" id="site-search">
+            <input type="text" id="sitesearch" name="sitesearch">
             <div class="buttons">
-                <button id="search">Googol Search!</button>
-                <button id="random">I'm feeling Lucky</button>
+                <input type="submit" value="Googol Search!" id="searchbutton"></button>
+                <input type="submit" value="I'm feeling Lucky" id="randombutton"></button>
             </div>
         </form>
+    </section>
+    <section class="results">
+        <p id = "searchresults">  </p>
     </section>
     
 </body>
