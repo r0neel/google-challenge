@@ -1,0 +1,26 @@
+{
+  "name": "google-challenge",
+  "version": "1.0.0",
+  "description": "## Creating a client search webpage and an engine that fetches data from an API --- ### The client webpage",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/index.js"
+   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gi-ba-bu/google-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gi-ba-bu/google-challenge/issues"
+  },
+  "homepage": "https://github.com/gi-ba-bu/google-challenge#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
