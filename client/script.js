@@ -7,20 +7,24 @@ function showResults(e){
     e.preventDefault();
     let submitter = e.submitter;
     let handler = submitter.id;
-    if(handler === 'searchbutton'){
     let topic = e.target.sitesearch.value;
-    console.log(topic);
-    fetch(`http://localhost:3000/topics/${topic}`)
-    .then(resp => resp.text())
-    .then(data =>{resultSpace.textContent =data;
-    })}
-    if(handler === 'randombutton'){
-    let topic = e.target.sitesearch.value;
-    console.log(topic);
-    fetch(`http://localhost:3000/topics/${topic}[0]`)
-    .then(resp => resp.text())
-    .then(data =>{resultSpace.textContent =data;
-     })}
+    if(topic!=""){
+        if(handler === 'searchbutton'){
+        fetch(`http://localhost:3000/topics/${topic}`)
+        .then(resp => resp.text())
+        .then(data =>{resultSpace.textContent =data;
+        })}
+        
+        if(handler === 'randombutton'){
+            console.log(topic);
+            fetch(`http://localhost:3000/topics/${topic}/first`)
+            .then(resp => resp.text())
+            .then(data =>{
+                console.log(data);
+                resultSpace.textContent=data;
+            })
+        }
+    }
 }
 //searchButton.addEventListener('click',showResults);
 form.addEventListener('submit',showResults);

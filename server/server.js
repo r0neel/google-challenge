@@ -35,6 +35,17 @@ app.get("/topics/:id", (req, res) => {
     }
   });
 
+app.get("/topics/:id/first", (req, res) =>{
+  try {
+    let quoteId = req.params.id;
+    if (!resources[quoteId]) {
+        throw new Error(`Error: no search results for ${quoteId}.`);
+    }
+    res.send(resources[quoteId][0]);
+} catch (err) {
+    res.status(404).send(err.message);        
+}
+});
 
 
 module.exports = app;
