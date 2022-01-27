@@ -15,15 +15,25 @@ function showResults(e){
         .then(data =>{resultSpace.textContent =data;
         })}
         
+        // if(handler === 'randombutton'){
+        //     console.log(topic);
+        //     fetch(`http://localhost:3000/topics/${topic}/first`)
+        //     .then(resp => resp.text())
+        //     .then(data =>{
+        //         console.log(data);
+        //         resultSpace.textContent=data;
+        //     })
+        // }
+
         if(handler === 'randombutton'){
             console.log(topic);
-            fetch(`http://localhost:3000/topics/${topic}/first`)
+            fetch(`http://localhost:3000/topics/${topic}`)
             .then(resp => resp.text())
             .then(data =>{
-                console.log(data);
-                resultSpace.textContent=data;
+                resultSpace.textContent= JSON.parse(data)[1];
             })
         }
+
     }
 }
 //searchButton.addEventListener('click',showResults);

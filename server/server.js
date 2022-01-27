@@ -10,17 +10,18 @@ app.use(express.json());
 //     {topic: "meat", link: ["https://en.wikipedia.org/wiki/Meat"]} 
 // ]
 
-const resources = { 
-    fruit: ["https://www.britannica.com/science/fruit-plant-reproductive-body","https://en.wikipedia.org/wiki/Fruit", "https://www.halfyourplate.ca/fruits-and-veggies/fruits-a-z/","https://www.myplate.gov/eat-healthy/fruits","https://www.fruitlogistica.com/en/","https://www.betterhealth.vic.gov.au/health/healthyliving/fruit-and-vegetables"],
-    meat: ["https://en.wikipedia.org/wiki/Meat","https://www.merriam-webster.com/dictionary/meat","https://www.redefinemeat.com/"] 
-}
+const resources = require("../data/data.json")
+// { 
+//     fruit: ["https://www.britannica.com/science/fruit-plant-reproductive-body","https://en.wikipedia.org/wiki/Fruit", "https://www.halfyourplate.ca/fruits-and-veggies/fruits-a-z/","https://www.myplate.gov/eat-healthy/fruits","https://www.fruitlogistica.com/en/","https://www.betterhealth.vic.gov.au/health/healthyliving/fruit-and-vegetables"],
+//     meat: ["https://en.wikipedia.org/wiki/Meat","https://www.merriam-webster.com/dictionary/meat","https://www.redefinemeat.com/"] 
+// }
 
 app.get("/", (req, res) => {
     res.send('Hello World!');
-  });
+  });  
 
 app.get("/topics", (req, res) => {
-    res.send(resources);
+    res.json(resources);
   });
 
 app.get("/topics/:id", (req, res) => {
@@ -29,7 +30,7 @@ app.get("/topics/:id", (req, res) => {
         if (!resources[quoteId]) {
             throw new Error(`Error: no search results for ${quoteId}.`);
         }
-        res.send(resources[quoteId]);
+        res.json(resources[quoteId]);
     } catch (err) {
         res.status(404).send(err.message);        
     }
@@ -41,7 +42,7 @@ app.get("/topics/:id/first", (req, res) =>{
     if (!resources[quoteId]) {
         throw new Error(`Error: no search results for ${quoteId}.`);
     }
-    res.send(resources[quoteId][0]);
+    res.json(resources[quoteId][0]);
 } catch (err) {
     res.status(404).send(err.message);        
 }

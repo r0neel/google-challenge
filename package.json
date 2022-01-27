@@ -4,7 +4,7 @@
   "description": "## Creating a client search webpage and an engine that fetches data from an API --- ### The client webpage",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server/index.js",
     "dev": "nodemon server/index.js"
    },
   "repository": {
