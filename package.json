@@ -4,9 +4,10 @@
   "description": "## Creating a client search webpage and an engine that fetches data from an API --- ### The client webpage",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "nodemon server/index.js"
-   },
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "jest --watchAll --detectOpenHandles"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gi-ba-bu/google-challenge.git"
@@ -22,5 +23,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "supertest": "^6.2.2"
   }
 }
