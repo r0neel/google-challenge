@@ -7,7 +7,7 @@ function showResults(e){
     e.preventDefault();
     let submitter = e.submitter;
     let handler = submitter.id;
-    let topic = e.target.sitesearch.value;
+    let topic = e.target.sitesearch.value; //to lower case here
     if(topic!=""){
         if(handler === 'searchbutton'){
         fetch(`http://localhost:3000/topics/${topic}`)
@@ -15,16 +15,6 @@ function showResults(e){
         .then(data =>{resultSpace.textContent =data;
         })}
         
-        // if(handler === 'randombutton'){
-        //     console.log(topic);
-        //     fetch(`http://localhost:3000/topics/${topic}/first`)
-        //     .then(resp => resp.text())
-        //     .then(data =>{
-        //         console.log(data);
-        //         resultSpace.textContent=data;
-        //     })
-        // }
-
         if(handler === 'randombutton'){
             console.log(topic);
             fetch(`http://localhost:3000/topics/${topic}`)
