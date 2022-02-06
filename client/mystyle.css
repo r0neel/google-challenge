@@ -24,21 +24,36 @@ section{
     align-items: center;
 }
 
-input{
+#sitesearch{
     height:30px; 
-    width:30vw;
+    width:296px;
+    padding:2px;
+    border:0;
+    margin:0;
 }
 
-div.buttons{
-    padding-top:5px;
+div.buttons {
     display:flex;
+    align-items: stretch;
     flex-direction: row;
-    justify-content: center;
-    width:30vw;
+    width:300px;
+    padding:0;
+    border:0;
+    margin:0;
+    padding-top:5px;
     gap:5px;
+    flex: 1;
+}
+
+
+#searchbutton, #randombutton{
+    flex:1;
+    background-color: #F2F2F2;
 }
 
 div.logo{
     padding:20px;
 }
+
+
 
